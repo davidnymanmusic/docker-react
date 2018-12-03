@@ -1,12 +1,12 @@
 FROM node:alpine as builder
 
-WORKDIR /app
+WORKDIR '/app'
 
 COPY package.json .
 
 RUN npm install
 
-COPY package*.json ./
+COPY . .
 RUN npm run build
 
 FROM nginx
